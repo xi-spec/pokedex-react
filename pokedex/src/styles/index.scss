@@ -1,7 +1,8 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800&display=swap');
 //fonts
-$primary: 'black';
-$second: 'grey';
+$primary: 'Work Sans', sans-serif;
+$second: 'Raleway', sans-serif;
 
 
 // colors
@@ -28,7 +29,7 @@ $fightingColor: linear-gradient(to left, #e32c2cbd #1475cfbe);
 
 @mixin display($direction, $justify, $align) {
     display: flex;
-    flex-direction: $param1;
+    flex-direction: $direction;
     justify-content: $justify;
     align-items: $align;
 }
