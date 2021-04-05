@@ -1,0 +1,53 @@
+
+//fonts
+$primary: 'black';
+$second: 'grey';
+
+
+// colors
+$bugColor: #37612d;
+$darkColor: #202020;
+$dragonColor: #20415c;
+$electricColor: #ffe14c;
+$fireColor: #ff2a2abb;
+$fairyColor: #ff7da8d5;
+$flyingColor: #a9e4e0e8;
+$ghostColor: #424242;
+$grassColor:#6bfa29a1;
+$groundColor: #ffa12598;
+$normalColor: #b3b3b3;
+$poisonColor: #ca4be4c0;
+$psychicColor: #fa86b4de;
+$rockColor:  #301700bb;
+$steelColor: #95c2bf;
+$waterColor: #239cff9c;
+$fightingColor: linear-gradient(to left, #e32c2cbd #1475cfbe);
+
+
+//functions
+
+@mixin display($direction, $justify, $align) {
+    display: flex;
+    flex-direction: $param1;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin font($size, $weight, $color) {
+    font-size: $size;
+    font-weight: $weight;
+    color: $color;
+}
+
+@mixin button($color, $bg){
+    width: 150px;
+    height: 50px;
+    border-radius: 5px;
+    color: $color;
+    background: $bg;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+
