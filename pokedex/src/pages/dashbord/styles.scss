@@ -1,5 +1,112 @@
-@import '../../styles/index.scss';
+@import '../../styles';
+
+
+.col-1{
+    padding-right: 10px;
+    padding-bottom: 10px;
+    text-decoration: none; 
+}
+
+.pokemon__imgs-container{
+    width: 100%;
+    @include display(row,center,'');
+    flex-flow: row wrap;
+  }
+
+  .module {
+    @include display(column,center,center);
+    width: 160px;
+    height: 140px;
+    margin-top: 20px;
+    text-align: center;
+    color: #ffffff;
+    border-radius: 10%;
+    box-shadow: 14px 12px 20px -16px rgba(72,71,71,0.53);
+
+    &:hover{
+        background-color: #EEE;
+        cursor: pointer;
+        color: #607d8b;
+      }
+    
+    &:hover img{
+        width: 50px;
+        height: 50px;
+        margin-bottom: 10px;
+      }
+    
+     img {
+        width: 80px;
+        height: 60px;
+        margin: 10px 0 15px 0;
+    }
+  }
 
 .title{
-    color: $flyingColor;
+    font-family: $primary;
+    @include font(40px, 500, $flyingColor);
+    margin: 20px 10px 20px 40px;
 }
+.pagination{
+   @include display(row,center,center)
+}
+
+
+/* pokemons-background-color*/
+.bug{
+    background: $bugColor;
+  }
+  .dark{
+    background: $darkColor;
+  }
+  .dragon{
+    background: $dragonColor;
+  }
+  
+  .electric{
+    background: $electricColor;
+  }
+  .fire{
+    background: $fireColor;
+  }
+  .fairy{
+    background: $fairyColor;
+  }
+  .flying{
+    background: $flyingColor;
+  }
+  .ghost{
+    background: $ghostColor;
+  }
+  .grass{
+    background: $grassColor;
+  }
+  .ground{
+    background: $groundColor;
+  }
+  .normal{
+    background: $normalColor;
+  }
+  .poison{
+    background: $poisonColor;
+  }
+  
+  .psychic{
+    background: $psychicColor;
+  }
+  .rock{
+    background: $rockColor;
+  }
+  .steel{
+    background: $steelColor;
+  }
+  .water{
+    background: $waterColor;
+  }
+  
+  .fighting{
+    background: #e32c2cbd;
+    background: -webkit-linear-gradient(right, #e32c2cbd #1475cfbe);
+    background: -moz-linear-gradient(right, #e32c2cbd #1475cfbe);
+    background: linear-gradient(to left, #e32c2cbd #1475cfbe);
+  }
