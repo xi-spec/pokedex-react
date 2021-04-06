@@ -1,18 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import './styles.scss';
-import Pagination from '@material-ui/lab/Pagination';
 import { bindActionCreators, Dispatch } from 'redux';
 import { connect } from 'react-redux';
 import { loadPokemons } from '../../redux/actions/pokeActions';
 import { Link } from 'react-router-dom';
-function Dashboard ({ actions, pokemons }:{actions:any, pokemons:any}) {
-  const [page, setPage] = useState(1);
-  const handleChange = (event:any, value:any) => {
-    setPage(value);
-  };
+import { Pokemon } from '../../models/interface';
+import Pagination from './pagination';
 
+function Dashboard ({ actions, pokemons }:{actions:any, pokemons:Pokemon[]}) {
   useEffect(() => {
-    actions.loadPokemons();
+    actions.loadPokemons(0, 14);
   }, []);
 
   return (
@@ -20,8 +17,8 @@ function Dashboard ({ actions, pokemons }:{actions:any, pokemons:any}) {
       <h1 className='title'>POKEDEX</h1>
       <div
       className='pokemon__imgs-container'>
-      {pokemons.length === 14 && (
-        pokemons.map((pokemon:any) => (
+      {pokemons && (
+        pokemons.map((pokemon:Pokemon) => (
           <Link
           key={pokemon.name}
           to='/'
@@ -32,7 +29,11 @@ function Dashboard ({ actions, pokemons }:{actions:any, pokemons:any}) {
           >
             <img
             className='pokemon-img'
-             src={pokemon.sprites.other.dream_world.front_default} alt={pokemon.name}/>
+             src={pokemon.sprites.other.dream_world.front_default
+               ? pokemon.sprites.other.dream_world.front_default
+               : pokemon.sprites.other['official-artwork'].front_default
+                 ? pokemon.sprites.other['official-artwork'].front_default
+                 : pokemon.sprites.front_shiny} alt={pokemon.name}/>
              <h5>{pokemon.name.toUpperCase()}</h5>
             </div>
           </Link>
@@ -40,16 +41,12 @@ function Dashboard ({ actions, pokemons }:{actions:any, pokemons:any}) {
         ))
       )}
       </div>
-<Pagination className={'pagination'}
-             size="large"
-             count={15}
-             page={page}
-             onChange={handleChange}/>
+     <Pagination actions={actions} />
     </main>
   );
 }
 
-function mapStateToProps ({ pokemons }:{pokemons:any}) {
+function mapStateToProps ({ pokemons }:{pokemons:Pokemon[]}) {
   return { pokemons };
 }
 
