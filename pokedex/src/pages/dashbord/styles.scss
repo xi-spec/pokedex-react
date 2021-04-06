@@ -1,6 +1,9 @@
 @import '../../styles';
 
 
+.pokedex{
+    margin: 40px;
+}
 .col-1{
     padding-right: 10px;
     padding-bottom: 10px;
@@ -36,8 +39,8 @@
       }
     
      img {
-        width: 80px;
-        height: 60px;
+        max-width: 80px;
+        max-height: 60px;
         margin: 10px 0 15px 0;
     }
   }
@@ -45,10 +48,7 @@
 .title{
     font-family: $primary;
     @include font(40px, 500, $flyingColor);
-    margin: 20px 10px 20px 40px;
-}
-.pagination{
-   @include display(row,center,center)
+    margin: 20px 10px 20px 10px;
 }
 
 
@@ -103,7 +103,9 @@
   .water{
     background: $waterColor;
   }
-  
+  .ice{
+      background: $iceColor;
+  }
   .fighting{
     background: #e32c2cbd;
     background: -webkit-linear-gradient(right, #e32c2cbd #1475cfbe);
