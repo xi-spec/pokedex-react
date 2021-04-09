@@ -47,9 +47,10 @@
 
 .title{
     font-family: $primary;
-    @include font(40px, 500, $flyingColor);
+    @include font(40px, 500, black);
     margin: 20px 10px 20px 10px;
 }
+
 
 
 /* pokemons-background-color*/

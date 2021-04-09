@@ -20,6 +20,11 @@ export function loadPokemons (page:number, rowsPerPage:number) {
           type: actionsType.LOAD_POKEMONS,
           pokemons
         });
+      } else {
+        dispatch({
+          type: actionsType.LOAD_POKEMONS,
+          pokemons: []
+        });
       }
     });
   };

@@ -6,6 +6,7 @@ import { loadPokemons } from '../../redux/actions/pokeActions';
 import { Link } from 'react-router-dom';
 import { Pokemon } from '../../models/interface';
 import Pagination from './pagination';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 function Dashboard ({ actions, pokemons }:{actions:any, pokemons:Pokemon[]}) {
   useEffect(() => {
@@ -17,8 +18,9 @@ function Dashboard ({ actions, pokemons }:{actions:any, pokemons:Pokemon[]}) {
       <h1 className='title'>POKEDEX</h1>
       <div
       className='pokemon__imgs-container'>
-      {pokemons && (
-        pokemons.map((pokemon:Pokemon) => (
+      {pokemons.length
+        ? (
+            pokemons.map((pokemon:Pokemon) => (
           <Link
           key={pokemon.name}
           to='/'
@@ -38,8 +40,9 @@ function Dashboard ({ actions, pokemons }:{actions:any, pokemons:Pokemon[]}) {
             </div>
           </Link>
 
-        ))
-      )}
+            ))
+          )
+        : <CircularProgress color="inherit" /> }
       </div>
      <Pagination actions={actions} />
     </main>
