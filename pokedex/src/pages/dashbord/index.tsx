@@ -4,7 +4,7 @@ import { bindActionCreators, Dispatch } from 'redux';
 import { connect } from 'react-redux';
 import { loadPokemons } from '../../redux/actions/pokeActions';
 import { Link } from 'react-router-dom';
-import { Pokemon } from '../../models/interface';
+import { Pokemon, Pokedex } from '../../models/interface';
 import Pagination from './pagination';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
@@ -23,7 +23,7 @@ function Dashboard ({ actions, pokemons }:{actions:any, pokemons:Pokemon[]}) {
             pokemons.map((pokemon:Pokemon) => (
           <Link
           key={pokemon.name}
-          to='/'
+          to={`/detail/${pokemon.name}`}
           className = 'col-1'
           >
             <div
@@ -49,7 +49,7 @@ function Dashboard ({ actions, pokemons }:{actions:any, pokemons:Pokemon[]}) {
   );
 }
 
-function mapStateToProps ({ pokemons }:{pokemons:Pokemon[]}) {
+function mapStateToProps ({ pokedex: { pokemons } }:{pokedex:Pokedex}) {
   return { pokemons };
 }
 

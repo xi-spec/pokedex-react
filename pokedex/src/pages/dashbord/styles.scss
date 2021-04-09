@@ -51,6 +51,9 @@
     margin: 20px 10px 20px 10px;
 }
 
+.pagination{
+  margin-top: 20px;
+}
 
 
 /* pokemons-background-color*/
@@ -108,8 +111,6 @@
       background: $iceColor;
   }
   .fighting{
-    background: #e32c2cbd;
-    background: -webkit-linear-gradient(right, #e32c2cbd #1475cfbe);
-    background: -moz-linear-gradient(right, #e32c2cbd #1475cfbe);
-    background: linear-gradient(to left, #e32c2cbd #1475cfbe);
+    background: rgb(255,0,24);
+    background: linear-gradient(90deg, rgba(255,0,24,1) 35%, rgba(0,110,255,1) 100%);
   }

@@ -1,6 +1,9 @@
 const initialState = {
-  pokemons: []
+  pokedex: {
+    pokemons: [],
+    pokemon: null
 
+  }
 };
 
 export default initialState;
