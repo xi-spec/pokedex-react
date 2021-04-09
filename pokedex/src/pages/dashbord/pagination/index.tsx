@@ -1,10 +1,13 @@
 import React, { useState, MouseEvent } from 'react';
-import loadPokemonsNumber from '../../../utils/loadPokemonsNumber';
 import TablePagination from '@material-ui/core/TablePagination';
 
 export default function Pagination ({ actions }:{actions:any}) {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(14);
+
+  const loadPokemonsNumber = (page:number, rowsPerPage:number) => {
+    return page === 1 ? rowsPerPage : rowsPerPage * page;
+  };
 
   const handleChangePage = (event:MouseEvent<HTMLButtonElement> | null, newPage:number) => {
     setPage(newPage);
