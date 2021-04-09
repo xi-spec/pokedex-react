@@ -1,6 +1,7 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import Dashboard from './pages/dashbord';
+import Detail from './pages/detail';
 import store from './redux/store/configureStore';
 import {
   BrowserRouter as Router,
@@ -14,7 +15,8 @@ function App () {
     <Provider store={store}>
             <Router>
               <Switch>
-                <Route path='/' component={Dashboard}></Route>
+                <Route exact path='/' component={Dashboard}></Route>
+                <Route exact path='/detail/:pokeName' component={Detail}></Route>
               </Switch>
             </Router>
 

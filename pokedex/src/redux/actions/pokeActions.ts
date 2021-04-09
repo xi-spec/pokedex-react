@@ -29,3 +29,14 @@ export function loadPokemons (page:number, rowsPerPage:number) {
     });
   };
 }
+
+export function loadPokemon (pokeName:string) {
+  return async (dispatch:Dispatch) => {
+    const { data } = await axios.get(`${API.pokemon}${pokeName}`);
+
+    dispatch({
+      type: actionsType.LOAD_POKEMON,
+      data
+    });
+  };
+}
