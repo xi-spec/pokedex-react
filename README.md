@@ -2,6 +2,9 @@
 
 Pokédex Web App which displays a list of the all 1118 pokemons and their details.
 
+# Demo:
+https://xi-spec.github.io/Pokedex-React/
+
 # To run the project (scripts)
 
 After you clone the project go inside each folder [pokedex] and run the command npm install.
