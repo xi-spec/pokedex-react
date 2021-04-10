@@ -50,7 +50,7 @@ function Detail ({ actions, pokemon, match }:{actions:any, pokemon:Pokemon, matc
         </div>
         <div className='row-content'>
            <h4>Weight:</h4>
-           <p>{`${pokemon.weight / 10} kG`}</p>
+           <p>{`${pokemon.weight / 10} KG`}</p>
         </div>
       </div>
 
