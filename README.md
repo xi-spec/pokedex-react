@@ -3,7 +3,7 @@
 Pokédex Web App which displays a list of the all 1118 pokemons and their details.
 
 # Demo:
-https://xi-spec.github.io/Pokedex-React/
+https://xi-spec.github.io/pokedex-react/
 
 # To run the project (scripts)
 
