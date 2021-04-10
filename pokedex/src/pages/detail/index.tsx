@@ -59,8 +59,11 @@ function Detail ({ actions, pokemon, match }:{actions:any, pokemon:Pokemon, matc
       {pokemon.stats.map(stat => (
         <div key={stat.stat.name}>
         <p>{`${stat.stat.name}: ${stat.base_stat}`}</p>
-        <div className={`progress-bar stripes ${stat.base_stat >= 50 ? 'green' : 'red'}`}>
-          <span style={{ width: stat.base_stat * 2 }}></span>
+        <div
+        className={'progress-bar stripes'}>
+          <span
+          className={stat.base_stat > 100 ? 'blue' : stat.base_stat >= 50 ? 'green' : 'red'}
+          style={{ width: stat.base_stat * 2.5 }}></span>
         </div>
         </div>
       ))}

@@ -3,16 +3,17 @@
 
 .pokedex{
     margin: 40px;
+    
 }
 .col-1{
-    padding-right: 10px;
+    padding: 0 5px;
     padding-bottom: 10px;
     text-decoration: none; 
 }
 
 .pokemon__imgs-container{
     width: 100%;
-    @include display(row,center,'');
+    @include display(row,center,center);
     flex-flow: row wrap;
   }
 
@@ -116,6 +117,12 @@
   }
 
   @media (max-width: 1000px) {
+
+    .pokemon__imgs-container{
+      width: 100%;
+      @include display(row,center,center);
+      flex-flow: row wrap;
+    }
     
     .pokedex{
       margin: 10px;
