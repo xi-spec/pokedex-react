@@ -13,7 +13,7 @@ import './app.scss';
 function App () {
   return (
     <Provider store={store}>
-            <Router>
+            <Router basename={process.env.PUBLIC_URL}>
               <Switch>
                 <Route exact path='/' component={Dashboard}></Route>
                 <Route exact path='/detail/:pokeName' component={Detail}></Route>
