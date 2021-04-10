@@ -15,8 +15,8 @@ function Detail ({ actions, pokemon, match }:{actions:any, pokemon:Pokemon, matc
   return (
     pokemon && (
 
-    <div className={`container ${pokemon.types[0].type.name}`}>
-
+    <div className={pokemon.types[0].type.name}>
+    <div className='container'>
     <section className='margin'>
     <h1>{pokemon.name}</h1>
     <div className ='types__container'>
@@ -66,6 +66,7 @@ function Detail ({ actions, pokemon, match }:{actions:any, pokemon:Pokemon, matc
 
     </div>
 </section>
+    </div>
     </div>
     )
   );
