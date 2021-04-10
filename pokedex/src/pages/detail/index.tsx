@@ -18,7 +18,7 @@ function Detail ({ actions, pokemon, match }:{actions:any, pokemon:Pokemon, matc
     <div className={pokemon.types[0].type.name}>
     <div className='container'>
     <section className='margin'>
-    <h1>{pokemon.name}</h1>
+    <h1>{pokemon.name.toUpperCase()}</h1>
     <div className ='types__container'>
  {pokemon.types.map(type => (
    <div key={type.type.name} className={`types-row__container type-${type.type.name}`}>
@@ -26,9 +26,11 @@ function Detail ({ actions, pokemon, match }:{actions:any, pokemon:Pokemon, matc
    </div>
  ))}
     </div>
+
     <div className ='id__container'>
       <h3>{`ID:${pokemon.id}`}</h3>
     </div>
+
     <div className='pokemon__img-container'>
     <img
       className='pokemon-img'
