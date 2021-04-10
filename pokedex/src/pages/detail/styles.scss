@@ -40,7 +40,7 @@ h4{
 }
 p{
   font-family: $second;
-  color: #5c5c5c;
+  @include font(12,300,#5c5c5c)
 }
 nav{
   display: flex;
@@ -58,7 +58,7 @@ nav{
 
  .pokemon-detail__container{
   margin: 0 50px 0 50px;
-   @include display(column,'','');
+   @include display(column,flex-start,flex-start);
 
    & img{
     max-height: 200px;
@@ -66,13 +66,13 @@ nav{
 
    .height-weight{
      width: 100%;
-     @include display(row,'','');
+     @include display(row,flex-start,flex-start);
     margin: 20px 0;
    
    }
    .row-content {
-     width: 140px;
-     @include display(row,'','');
+     width: 150px;
+     @include display(row,flex-start,flex-start);
    }
    p{
   margin: 0 20px 0 10px;
@@ -83,7 +83,7 @@ nav{
 
 
 .types__container{
-  @include display(row,'','');
+  @include display(row,flex-start,flex-start);
 
   .types-row__container{
     @include display(row,'','');
@@ -115,16 +115,18 @@ nav{
  background-color: #ffffff;
  height: 10px;
  width: 250px;
+ box-shadow: 0 1px 5px rgb(219, 219, 219);
  border-radius: 5px;
- box-shadow: 0 1px 5px rgb(155, 155, 155)
+
+ 
 }
 
 .progress-bar span {
  display: inline-block;
  height: 100%;
- border-radius: 3px;
- box-shadow: 0 1px 0 rgba(255, 255, 255, .5) inset;
- transition: width .4s ease-in-out;
+ border-radius: 5px;
+ box-shadow: 0 1px 5px rgb(219, 219, 219);
+ transition: width 1s ease-in-out;
 }
 
 .stripes span {
@@ -133,12 +135,16 @@ nav{
 
 }
 
-.red span{
+.red{
  background-color: #ff4b4b;
 
 } 
 
-.green span{
+.blue{
+  background-color: #285ff5cc;
+}
+
+.green{
  background-color: #4bf575;
 
 } 
@@ -203,8 +209,8 @@ background: linear-gradient(90deg, rgba(255,0,24,1) 35%, rgba(0,110,255,1) 100%)
   }
 
   .type-fighting{
-    background: rgb(0,110,255);
-    background: linear-gradient(90deg, rgba(0,110,255,1) 0%, rgba(255,0,24,1) 100%);
+    background: rgb(255,0,24);
+    background: linear-gradient(90deg, rgb(206, 1, 22) 35%, rgb(2, 98, 224) 100%);
   }
 
 
@@ -290,6 +296,11 @@ background: linear-gradient(90deg, rgba(255,0,24,1) 35%, rgba(0,110,255,1) 100%)
     h1{
       margin-top:20px;
     }
+
+    .margin{
+      margin: 0 4em;
+     }
+    
   
     .pokemon-img{
       max-height: 200px;

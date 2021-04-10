@@ -26,6 +26,7 @@ export default function Pagination ({ actions }:{actions:any}) {
   return (
 
      <TablePagination
+     labelRowsPerPage='Pokemons'
         component="div"
         className='pagination'
         rowsPerPageOptions={[14, 28, 56, 112]}

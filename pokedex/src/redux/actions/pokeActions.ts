@@ -2,16 +2,17 @@ import actionsType from './actionsType';
 import axios from 'axios';
 import { Dispatch } from 'redux';
 import { API, OFFSET } from '../../constants/api';
+import { Pokemon } from '../../models/interface';
 
 export function loadPokemons (page:number, rowsPerPage:number) {
   return async (dispatch: Dispatch) => {
-    let pokemons:any = [];
+    let pokemons:Pokemon[] = [];
     const { data: { results } } = await axios.get(`${API.pokemons}${rowsPerPage}${OFFSET}${page}`);
 
-    results.forEach(async (pokemon:any) => {
+    results.forEach(async (pokemon:{name:string, url:string}) => {
       const { data } = await axios.get(pokemon.url);
       pokemons = [...pokemons, data];
-      pokemons.sort((a:any, b:any) => {
+      pokemons.sort((a:Pokemon, b:Pokemon) => {
         return a.id - b.id;
       });
 
