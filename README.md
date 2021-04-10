@@ -2,6 +2,8 @@
 
 Pokédex Web App which displays a list of the all 1118 pokemons and their details.
 
+[![Captura-de-pantalla-2021-04-10-a-las-23-14-29.png](https://i.postimg.cc/pT4Y0kDW/Captura-de-pantalla-2021-04-10-a-las-23-14-29.png)](https://postimg.cc/vg7VTrqk)
+
 # Demo:
 https://xi-spec.github.io/pokedex-react/
 
